@@ -12,3 +12,9 @@ MAX_DATA_SIZE = 1024
 
 print(f"Connexion au serveur {HOST_IP}, port {HOST_PORT}")
 while True:
+    try:
+        s = socket.socket()
+        s.connect((HOST_IP, HOST_PORT))
+    except ConnectionRefusedError:
+        print("ERREUR : impossible de se connecter au serveur. Reconnexion...")
+        time.sleep(4)
