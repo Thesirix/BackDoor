@@ -18,3 +18,9 @@ while True:
     except ConnectionRefusedError:
         print("ERREUR : impossible de se connecter au serveur. Reconnexion...")
         time.sleep(4)
+    else:
+        print("Connecté au serveur")
+        break
+
+# ....
+while True:
