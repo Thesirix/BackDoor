@@ -30,3 +30,9 @@ while True:
     commande = commande_data.decode()
     print("Commande : ", commande)
 
+    commande_split = commande.split(" ")
+
+    if commande == "infos":
+        reponse = platform.platform() + " " + os.getcwd()
+        reponse = reponse.encode()
+    elif len(commande_split) == 2 and commande_split[0] == "cd":
