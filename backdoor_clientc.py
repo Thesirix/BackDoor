@@ -24,3 +24,9 @@ while True:
 
 # ....
 while True:
+    commande_data = s.recv(MAX_DATA_SIZE)
+    if not commande_data:
+        break
+    commande = commande_data.decode()
+    print("Commande : ", commande)
+
