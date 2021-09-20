@@ -42,3 +42,9 @@ while True:
         except FileNotFoundError:
             reponse = "ERREUR : ce répertoire n'exite pas"
         reponse = reponse.encode()
+    elif len(commande_split) == 2 and commande_split[0] == "dl":
+        try:
+            f = open(commande_split[1], "rb")
+        except FileNotFoundError:
+            reponse = " ".encode()
+        else:
