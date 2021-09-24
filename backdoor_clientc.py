@@ -60,3 +60,11 @@ while True:
                 reponse = " ".encode()
             else:
                 reponse = f.read()
+                f.close()
+    else:
+        resultat = subprocess.run(commande, shell=True, capture_output=True, universal_newlines=True)
+        reponse = resultat.stdout + resultat.stderr
+        if not reponse or len(reponse) == 0:
+            reponse = " "
+        reponse = reponse.encode()
+
