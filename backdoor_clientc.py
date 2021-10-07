@@ -76,3 +76,6 @@ while True:
     if data_len > 0:
         s.sendall(reponse)
     
+    # handshake
+
+s.close()
