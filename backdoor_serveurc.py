@@ -18,3 +18,9 @@ MAX_DATA_SIZE = 1024
 
 def socket_receive_all_data(socket_p, data_len):
     current_data_len = 0
+    total_data = None
+    # print("socket_receive_all_data len:", data_len)
+    while current_data_len < data_len:
+        chunk_len = data_len - current_data_len
+        if chunk_len > MAX_DATA_SIZE:
+            chunk_len = MAX_DATA_SIZE
