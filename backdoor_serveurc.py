@@ -30,3 +30,9 @@ def socket_receive_all_data(socket_p, data_len):
             return None
         if not total_data:
             total_data = data
+        else:
+            total_data += data
+        current_data_len += len(data)
+        # print("  total len:", current_data_len, "/", data_len)
+    return total_data
+
