@@ -24,3 +24,9 @@ def socket_receive_all_data(socket_p, data_len):
         chunk_len = data_len - current_data_len
         if chunk_len > MAX_DATA_SIZE:
             chunk_len = MAX_DATA_SIZE
+        data = socket_p.recv(chunk_len)
+        # print("  len:", len(data))
+        if not data:
+            return None
+        if not total_data:
+            total_data = data
