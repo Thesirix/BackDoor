@@ -36,3 +36,11 @@ def socket_receive_all_data(socket_p, data_len):
         # print("  total len:", current_data_len, "/", data_len)
     return total_data
 
+def socket_send_command_and_receive_all_data(socket_p, command):
+    if not command:  # if command == ""
+        return None
+    socket_p.sendall(command.encode())
+
+    header_data = socket_receive_all_data(socket_p, 13)
+    longeur_data = int(header_data.decode())
+
