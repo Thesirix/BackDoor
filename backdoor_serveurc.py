@@ -59,3 +59,11 @@ print(f"Connexion établie avec {client_address}")
 
 dl_filename = None
 
+while True:
+    # ... infos
+    infos_data = socket_send_command_and_receive_all_data(connection_socket, "infos")
+    if not infos_data:
+        break
+    commande = input(client_address[0]+":"+str(client_address[1])+ " " + 
+    infos_data.decode() + " > ")
+
