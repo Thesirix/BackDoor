@@ -85,3 +85,9 @@ while True:
             f.write(data_recues)
             f.close()
             print("Fichier", dl_filename, "téléchargé.")
+        dl_filename = None
+    else:
+        print(data_recues.decode())
+
+s.close()
+connection_socket.close()
