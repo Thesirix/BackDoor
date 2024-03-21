@@ -79,3 +79,9 @@ while True:
 
     if dl_filename:
         if len(data_recues) == 1 and data_recues == b" ":
+            print("ERREUR: Le fichier", dl_filename, "n'existe pas")
+        else:
+            f = open(dl_filename, "wb")
+            f.write(data_recues)
+            f.close()
+            print("Fichier", dl_filename, "téléchargé.")
