@@ -1,46 +1,48 @@
-# BackDoor
+# 🔓 BackDoor
 
+This project is a simple implementation of a backdoor in Python, allowing a remote user to execute commands on a target computer remotely.
 
-Ce projet est une implémentation simple d'une backdoor en Python, permettant à un utilisateur distant d'exécuter des commandes sur un ordinateur cible à distance.
+## ✨ Features
 
-## Fonctionnalités
+- **🔌 Client-server connection:** The project uses sockets to establish a connection between a client and a server, enabling bidirectional communication.
+- **💻 System command execution:** The server can receive commands from the client and execute them on the target computer. This allows the remote user to control the computer remotely.
+- **🛠️ Additional features:**
+  - The server can retrieve system information such as the platform and current directory.
+  - The server can change the working directory on the target computer.
+  - The server can download files from the target computer.
+  - The server can capture screenshots of the target computer 📸.
 
-- **Connexion client-serveur:** Le projet utilise des sockets pour établir une connexion entre un client et un serveur, permettant ainsi la communication bidirectionnelle.
-- **Exécution de commandes système:** Le serveur peut recevoir des commandes de la part du client et les exécuter sur l'ordinateur cible. Cela permet à l'utilisateur distant de contrôler l'ordinateur à distance.
-- **Fonctionnalités supplémentaires:**
-  - Le serveur peut récupérer des informations système telles que la plateforme et le répertoire actuel.
-  - Le serveur peut changer de répertoire de travail sur l'ordinateur cible.
-  - Le serveur peut télécharger des fichiers de l'ordinateur cible.
-  - Le serveur peut capturer des captures d'écran de l'ordinateur cible.
+## 📂 Project Structure
 
-## Structure du projet
+The project consists of two Python files:
 
-Le projet est composé de deux fichiers Python :
-- `serveur.py`: Le code du serveur qui s'exécute sur l'ordinateur cible. Il attend les connexions entrantes des clients et exécute les commandes reçues.
-- `client.py`: Le code du client qui s'exécute sur l'ordinateur de l'utilisateur distant. Il se connecte au serveur et envoie des commandes à exécuter.
+- `serveur.py`: The server code that runs on the target computer. It waits for incoming connections from clients and executes received commands.
+- `client.py`: The client code that runs on the remote user's computer. It connects to the server and sends commands to be executed.
 
-## Utilisation
+## 🚀 Usage
 
-1. **Exécuter le serveur :**
-   - Exécutez le fichier `serveur.py` sur l'ordinateur cible en utilisant Python.
-   - Assurez-vous que le port spécifié dans le fichier est accessible depuis l'extérieur si vous prévoyez d'accéder à distance.
+1. **Run the server:**
 
-2. **Exécuter le client :**
-   - Exécutez le fichier `client.py` sur l'ordinateur de l'utilisateur distant en utilisant Python.
-   - Spécifiez l'adresse IP et le port du serveur auquel vous souhaitez vous connecter.
+   - Run the `serveur.py` file on the target computer using Python.
+   - Ensure the port specified in the file is accessible from the outside if you plan to access it remotely.
 
-3. **Envoyer des commandes :**
-   - Une fois connecté, vous pouvez envoyer des commandes au serveur depuis le client en utilisant la syntaxe appropriée.
-   - Par exemple, vous pouvez taper `ls` pour lister les fichiers dans le répertoire actuel, `cd <répertoire>` pour changer de répertoire, `dl <fichier>` pour télécharger un fichier, ou `capture <nom>` pour capturer un écran.
+2. **Run the client:**
 
-4. **Fermer la connexion :**
-   - Pour quitter la session, vous pouvez fermer le client et le serveur en appuyant sur Ctrl+C ou en fermant les fenêtres de console.
+   - Run the `client.py` file on the remote user's computer using Python.
+   - Specify the IP address and port of the server you wish to connect to.
 
-## Sécurité
+3. **Send commands:**
 
-Il est important de noter que ce projet est à des fins éducatives et de recherche uniquement. L'utilisation de cette backdoor sans consentement approprié peut violer les lois sur la vie privée et la sécurité informatique. Assurez-vous d'utiliser ce projet uniquement de manière légale et éthique, et avec le consentement explicite des parties concernées.
+   - Once connected, you can send commands to the server from the client using the appropriate syntax.
+   - For example, you can type `ls` to list files in the current directory, `cd <directory>` to change directory, `dl <file>` to download a file, or `capture <name>` to capture a screenshot.
 
-## Contributions
+4. **Close the connection:**
+   - To exit the session, you can close the client and server by pressing `Ctrl+C` or by closing the console windows.
 
-Les contributions sous forme de suggestions, de rapports de bogues ou de demandes de fonctionnalités sont les bienvenues. N'hésitez pas à ouvrir une issue ou à soumettre une pull request sur GitHub.
+## ⚠️ Security
 
+It is important to note that this project is for **educational and research purposes only**. Using this backdoor without appropriate consent may violate privacy and computer security laws. Please ensure you use this project only legally and ethically, and with the explicit consent of the parties involved.
+
+## ❤️ Contributions
+
+Contributions in the form of suggestions, bug reports, or feature requests are welcome. Feel free to open an issue or submit a pull request on GitHub.
